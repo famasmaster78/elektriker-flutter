@@ -44,6 +44,7 @@ class _MainAppState extends State<MainApp> {
           ],
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
+          showUnselectedLabels: false,
         ),
         body: Center(
           child: _widgetOptions.elementAt(_selectedIndex),
