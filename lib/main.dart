@@ -18,8 +18,6 @@ class MainApp extends StatefulWidget {
 class _MainAppState extends State<MainApp> {
   // Set initial index to 0, so the first tab is selected
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Home(),
     Settings(),
@@ -37,7 +35,9 @@ class _MainAppState extends State<MainApp> {
       title: 'Hello World',
       theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
       darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
+      themeMode: ThemeMode.system,
       home: Scaffold(
+        extendBody: true,
         bottomNavigationBar: NavigationBar(
           selectedIndex: _selectedIndex,
           onDestinationSelected: _onItemTapped,
@@ -45,11 +45,11 @@ class _MainAppState extends State<MainApp> {
           destinations: const <Widget>[
             NavigationDestination(
               icon: Icon(Icons.home),
-              label: 'Home',
+              label: 'Hjem',
             ),
             NavigationDestination(
               icon: Icon(Icons.settings),
-              label: 'Settings',
+              label: 'Indstillinger',
             ),
           ],
         ),
