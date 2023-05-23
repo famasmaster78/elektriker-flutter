@@ -1,3 +1,4 @@
+import 'package:elektriker_app/pages/kabeldimensionering.dart';
 import 'package:elektriker_app/pages/settings.dart';
 import 'package:elektriker_app/pages/home.dart';
 

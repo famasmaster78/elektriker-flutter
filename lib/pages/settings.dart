@@ -10,39 +10,51 @@ class Settings extends StatelessWidget {
       body: Center(
         child: ListView(children: [
           ListTile(
-            title: Text("Indstillinger"),
-            subtitle: Text("Her kan du ændre indstillinger"),
-            leading: Icon(Icons.settings),
-            trailing: Icon(Icons.arrow_forward_ios),
+            title: const Text("Indstillinger"),
+            subtitle: const Text("Her kan du ændre indstillinger"),
+            leading: const Icon(Icons.settings),
+            trailing: const Icon(
+              Icons.arrow_right,
+              size: 32,
+            ),
             onTap: () {
-              Navigator.pushNamed(context, '/settings');
+              /* Navigator.pushNamed(context, '/settings'); */
             },
           ),
           ListTile(
-            title: Text("Om os"),
-            subtitle: Text("Her kan du læse om os"),
-            leading: Icon(Icons.info),
-            trailing: Icon(Icons.arrow_forward_ios),
+            title: const Text("Om os"),
+            subtitle: const Text("Her kan du læse om os"),
+            leading: const Icon(Icons.info),
+            trailing: const Icon(
+              Icons.arrow_right,
+              size: 32,
+            ),
             onTap: () {
-              Navigator.pushNamed(context, '/about');
+              /* Navigator.pushNamed(context, '/about'); */
             },
           ),
           ListTile(
-            title: Text("Kontakt os"),
-            subtitle: Text("Her kan du kontakte os"),
-            leading: Icon(Icons.contact_page),
-            trailing: Icon(Icons.arrow_forward_ios),
+            title: const Text("Kontakt os"),
+            subtitle: const Text("Her kan du kontakte os"),
+            leading: const Icon(Icons.contact_page),
+            trailing: const Icon(
+              Icons.arrow_right,
+              size: 32,
+            ),
             onTap: () {
-              Navigator.pushNamed(context, '/contact');
+              /* Navigator.pushNamed(context, '/contact'); */
             },
           ),
           ListTile(
-            title: Text("Log ud"),
-            subtitle: Text("Her kan du logge ud"),
-            leading: Icon(Icons.logout),
-            trailing: Icon(Icons.arrow_forward_ios),
+            title: const Text("Log ud"),
+            subtitle: const Text("Her kan du logge ud"),
+            leading: const Icon(Icons.logout),
+            trailing: const Icon(
+              Icons.arrow_right,
+              size: 32,
+            ),
             onTap: () {
-              Navigator.pushNamed(context, '/login');
+              /* Navigator.pushNamed(context, '/login'); */
             },
           ),
         ]),
