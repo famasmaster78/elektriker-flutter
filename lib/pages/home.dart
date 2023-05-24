@@ -51,7 +51,7 @@ class Home extends StatelessWidget {
 
                 // Ord forklaringer
                 HomeGridItem(
-                  title: "Ord forklaringer",
+                  title: "Ordbog",
                   subtitle: "Her kan du se ord forklaringer",
                   icon: Icons.book,
                   color: const Color.fromRGBO(255, 204, 128, 1),
@@ -105,10 +105,17 @@ class HomeGridItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Expanded(child: Icon(icon)),
+              Expanded(
+                  child: Icon(
+                icon,
+                size: 64,
+              )),
               ListTile(
                 /* leading: Icon(Icons.calculate), */
-                title: Text(title),
+                title: Text(
+                  title,
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
                 subtitle: Text(subtitle),
               ),
             ],
