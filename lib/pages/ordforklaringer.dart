@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class OrdForklaringer extends StatelessWidget {
   const OrdForklaringer({super.key});
@@ -62,7 +60,8 @@ class OrdForklaringer extends StatelessWidget {
             Card(
               child: ListTile(
                 title: Text("sf"),
-                subtitle: Text("Samtidighedsfaktor (Mindre end eller lig med 1)"),
+                subtitle:
+                    Text("Samtidighedsfaktor (Mindre end eller lig med 1)"),
               ),
             ),
             Card(
@@ -92,7 +91,8 @@ class OrdForklaringer extends StatelessWidget {
             Card(
               child: ListTile(
                 title: Text("IOB"),
-                subtitle: Text("Overstrømsbeskyttelsens minimumkrav til strømværdi for leder."),
+                subtitle: Text(
+                    "Overstrømsbeskyttelsens minimumkrav til strømværdi for leder."),
               ),
             ),
             Card(
@@ -104,13 +104,15 @@ class OrdForklaringer extends StatelessWidget {
             Card(
               child: ListTile(
                 title: Text("In"),
-                subtitle: Text("Mærkestrøm/Indstillingsstrøm for beskyttelsesudstyr."),
+                subtitle: Text(
+                    "Mærkestrøm/Indstillingsstrøm for beskyttelsesudstyr."),
               ),
             ),
             Card(
               child: ListTile(
                 title: Text("IZkor"),
-                subtitle: Text("korrigeret Strømværdi for kabel(IZkor = IZ30 · kt · ks)"),
+                subtitle: Text(
+                    "korrigeret Strømværdi for kabel(IZkor = IZ30 · kt · ks)"),
               ),
             ),
             Card(

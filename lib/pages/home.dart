@@ -1,7 +1,5 @@
 import 'package:elektriker_app/pages/formler.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 import 'kabeldimensionering.dart';
 import 'ordforklaringer.dart';
@@ -14,53 +12,60 @@ class Home extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: GridView.count(
-          scrollDirection: Axis.vertical,
-          crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          children: [
-            /* Kabel dimensionering */
-            HomeGridItem(
-              title: "Kabel dimensionering",
-              subtitle: "Her kan du dimensionere kabler",
-              icon: Icons.cable,
-              color: Color.fromRGBO(200, 230, 201, 1),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const KabelDimensionering()),
-                );
-              },
-            ),
-            /* Formler */
-            HomeGridItem(
-              title: "Formler",
-              subtitle: "Her kan du se formler",
-              icon: Icons.calculate,
-              color: Color.fromRGBO(187, 222, 251, 1),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Formler()),
-                );
-              },
-            ),
+        child: Center(
+          child: Container(
+            constraints: const BoxConstraints(maxWidth: 500),
+            child: GridView.count(
+              scrollDirection: Axis.vertical,
+              crossAxisCount: 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              children: [
+                /* Kabel dimensionering */
+                HomeGridItem(
+                  title: "Kabel dimensionering",
+                  subtitle: "Her kan du dimensionere kabler",
+                  icon: Icons.cable,
+                  color: const Color.fromRGBO(200, 230, 201, 1),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const KabelDimensionering()),
+                    );
+                  },
+                ),
+                /* Formler */
+                HomeGridItem(
+                  title: "Formler",
+                  subtitle: "Her kan du se formler",
+                  icon: Icons.calculate,
+                  color: const Color.fromRGBO(187, 222, 251, 1),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Formler()),
+                    );
+                  },
+                ),
 
-            // Ord forklaringer
-            HomeGridItem(
-              title: "Ord forklaringer",
-              subtitle: "Her kan du se ord forklaringer",
-              icon: Icons.book,
-              color: Color.fromRGBO(255, 204, 128, 1),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const OrdForklaringer()),
-                );
-              },
+                // Ord forklaringer
+                HomeGridItem(
+                  title: "Ord forklaringer",
+                  subtitle: "Her kan du se ord forklaringer",
+                  icon: Icons.book,
+                  color: const Color.fromRGBO(255, 204, 128, 1),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const OrdForklaringer()),
+                    );
+                  },
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
