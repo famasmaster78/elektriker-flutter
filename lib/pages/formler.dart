@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_math_fork/ast.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
-import 'package:flutter_math_fork/tex.dart';
 
 class Formler extends StatelessWidget {
   const Formler({super.key});
@@ -26,7 +24,7 @@ class Formler extends StatelessWidget {
               children: const [
                 FormelGridItem(
                   title: "Spænding",
-                  equation: r'U = R * I',
+                  equation: r'U = R \cdot I',
                   description:
                       "Udregning af spænding, når modstand og strøm er kendt",
                 ),
@@ -44,7 +42,7 @@ class Formler extends StatelessWidget {
                 ),
                 FormelGridItem(
                   title: "Effekt",
-                  equation: r'P = U * I',
+                  equation: r'P = U \cdot I',
                   description:
                       "Udregning af effekt, når spænding og strøm er kendt",
                 ),
@@ -67,7 +65,7 @@ class Formler extends StatelessWidget {
                 ),
                 FormelGridItem(
                   title: "Vinkelhastighed",
-                  equation: r'w = 2 * π * f',
+                  equation: r'w = 2 \cdot π \cdot f',
                   description:
                       "Udregning af vinkelhastighed, når frekvens er kendt",
                 ),
@@ -85,7 +83,7 @@ class Formler extends StatelessWidget {
                 ),
                 FormelGridItem(
                   title: "Faseforskydning",
-                  equation: r'phi = arctan(\frac X R)',
+                  equation: r'phi = \arctan(\frac X R)',
                   description:
                       "Udregning af faseforskydning, når reaktans og modstand er kendt",
                 ),
@@ -122,12 +120,13 @@ class FormelGridItem extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 title,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Math.tex(equation),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(description)
           ],
         ),
