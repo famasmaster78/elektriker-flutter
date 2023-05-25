@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class Formler extends StatelessWidget {
   Formler({Key? key}) : super(key: key);
 
   // List of all the formulas, with title, equation and description
-  final FormList = <Formula>[
+  final formulaList = <Formula>[
     Formula("Spænding", r'U = R \cdot I',
         "Udregning af spænding, når modstand og strøm er kendt"),
     Formula("Strøm", r'I = \frac U R',
@@ -41,17 +42,17 @@ class Formler extends StatelessWidget {
         child: Center(
           child: Container(
             constraints: const BoxConstraints(maxWidth: 500),
-            child: ListView.builder(
+            child: MasonryGridView.count(
               scrollDirection: Axis.vertical,
-              itemCount: FormList.length,
+              crossAxisCount: 2,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              itemCount: formulaList.length,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
-                  child: FormelGridItem(
-                    title: FormList[index].title,
-                    equation: FormList[index].equation,
-                    description: FormList[index].description,
-                  ),
+                return FormelGridItem(
+                  title: formulaList[index].title,
+                  equation: formulaList[index].equation,
+                  description: formulaList[index].description,
                 );
               },
             ),

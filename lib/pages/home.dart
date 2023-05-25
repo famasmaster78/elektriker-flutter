@@ -59,7 +59,7 @@ class Home extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const OrdForklaringer()),
+                          builder: (context) => OrdForklaringer()),
                     );
                   },
                 ),
@@ -114,7 +114,7 @@ class HomeGridItem extends StatelessWidget {
                 /* leading: Icon(Icons.calculate), */
                 title: Text(
                   title,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text(subtitle),
               ),
