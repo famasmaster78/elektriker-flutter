@@ -15,55 +15,61 @@ class Home extends StatelessWidget {
         child: Center(
           child: Container(
             constraints: const BoxConstraints(maxWidth: 500),
-            child: GridView.count(
-              scrollDirection: Axis.vertical,
-              crossAxisCount: 2,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              children: [
-                /* Kabel dimensionering */
-                HomeGridItem(
-                  title: "Kabel dimensionering",
-                  subtitle: "Her kan du dimensionere kabler",
-                  icon: Icons.cable,
-                  color: const Color.fromRGBO(200, 230, 201, 1),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const KabelDimensionering()),
-                    );
-                  },
-                ),
-                /* Formler */
-                HomeGridItem(
-                  title: "Formler",
-                  subtitle: "Her kan du se formler",
-                  icon: Icons.calculate,
-                  color: const Color.fromRGBO(187, 222, 251, 1),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Formler()),
-                    );
-                  },
-                ),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: GridView.count(
+                primary: false,
+                reverse: true,
+                scrollDirection: Axis.vertical,
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                shrinkWrap: true,
+                children: [
+                  /* Kabel dimensionering */
+                  HomeGridItem(
+                    title: "Kabel dimensionering",
+                    subtitle: "Her kan du dimensionere kabler",
+                    icon: Icons.cable,
+                    color: const Color.fromRGBO(200, 230, 201, 1),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const KabelDimensionering()),
+                      );
+                    },
+                  ),
+                  /* Formler */
+                  HomeGridItem(
+                    title: "Formler",
+                    subtitle: "Her kan du se formler",
+                    icon: Icons.calculate,
+                    color: const Color.fromRGBO(187, 222, 251, 1),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Formler()),
+                      );
+                    },
+                  ),
 
-                // Ord forklaringer
-                HomeGridItem(
-                  title: "Ordbog",
-                  subtitle: "Her kan du se ord forklaringer",
-                  icon: Icons.book,
-                  color: const Color.fromRGBO(255, 204, 128, 1),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const OrdForklaringer()),
-                    );
-                  },
-                ),
-              ],
+                  // Ord forklaringer
+                  HomeGridItem(
+                    title: "Ordbog",
+                    subtitle: "Her kan du se ord forklaringer",
+                    icon: Icons.book,
+                    color: const Color.fromRGBO(255, 204, 128, 1),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const OrdForklaringer()),
+                      );
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -108,7 +114,7 @@ class HomeGridItem extends StatelessWidget {
               Expanded(
                   child: Icon(
                 icon,
-                size: 64,
+                size: 56,
               )),
               ListTile(
                 /* leading: Icon(Icons.calculate), */
