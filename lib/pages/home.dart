@@ -1,3 +1,4 @@
+import 'package:elektriker_app/main.dart';
 import 'package:elektriker_app/pages/formler.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +32,9 @@ class Home extends StatelessWidget {
                     title: "Kabel dimensionering",
                     subtitle: "Her kan du dimensionere kabler",
                     icon: Icons.cable,
-                    color: const Color.fromRGBO(200, 230, 201, 1),
+                    color: !context.isDarkMode
+                        ? Colors.green[100]!
+                        : Colors.lightGreen[900]!,
                     onTap: () {
                       Navigator.push(
                         context,
@@ -45,7 +48,9 @@ class Home extends StatelessWidget {
                     title: "Formler",
                     subtitle: "Her kan du se formler",
                     icon: Icons.calculate,
-                    color: const Color.fromRGBO(187, 222, 251, 1),
+                    color: !context.isDarkMode
+                        ? Colors.blue[100]!
+                        : Colors.blueGrey[800]!,
                     onTap: () {
                       Navigator.push(
                         context,
@@ -59,7 +64,9 @@ class Home extends StatelessWidget {
                     title: "Ordbog",
                     subtitle: "Her kan du se ord forklaringer",
                     icon: Icons.book,
-                    color: const Color.fromRGBO(255, 204, 128, 1),
+                    color: !context.isDarkMode
+                        ? Colors.orange[100]!
+                        : Colors.orange[900]!,
                     onTap: () {
                       Navigator.push(
                         context,

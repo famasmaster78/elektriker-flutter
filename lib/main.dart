@@ -1,11 +1,20 @@
 import 'package:elektriker_app/pages/settings.dart';
 import 'package:elektriker_app/pages/home.dart';
+import 'package:elektriker_app/state/settingsModel.dart';
 
 import 'package:elektriker_app/theme/color_schemes.g.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+// Create extension method for checking if the platform is dark
+extension Darkmode on BuildContext {
+  bool get isDarkMode => Theme.of(this).brightness == Brightness.dark;
+}
 
 void main() {
-  runApp(const MainApp());
+  runApp(ChangeNotifierProvider(
+      create: (BuildContext context) => SettingsModel(),
+      child: const MainApp()));
 }
 
 class MainApp extends StatefulWidget {
@@ -35,7 +44,7 @@ class _MainAppState extends State<MainApp> {
       title: 'Hello World',
       theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
       darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
-      themeMode: ThemeMode.system,
+      themeMode: Provider.of<SettingsModel>(context).themeMode,
       home: Scaffold(
         extendBody: true,
         bottomNavigationBar: NavigationBar(
