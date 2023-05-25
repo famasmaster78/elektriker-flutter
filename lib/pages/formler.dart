@@ -2,7 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
 
 class Formler extends StatelessWidget {
-  const Formler({super.key});
+  Formler({Key? key}) : super(key: key);
+
+  // List of all the formulas, with title, equation and description
+  final FormList = <Formula>[
+    Formula("Spænding", r'U = R \cdot I',
+        "Udregning af spænding, når modstand og strøm er kendt"),
+    Formula("Strøm", r'I = \frac U R',
+        "Udregning af strøm, når spænding og modstand er kendt"),
+    Formula("Modstand", r'R = \frac U I',
+        "Udregning af modstand, når spænding og strøm er kendt"),
+    Formula("Effekt", r'P = U \cdot I',
+        "Udregning af effekt, når spænding og strøm er kendt"),
+    Formula("Kapacitans", r'C = \frac Q U',
+        "Udregning af kapacitans, når ladning og spænding er kendt"),
+    Formula("Induktans", r'L = \frac U I',
+        "Udregning af induktans, når spænding og strøm er kendt"),
+    Formula("Frekvens", r'f = \frac 1 T',
+        "Udregning af frekvens, når periodetid er kendt"),
+    Formula("Vinkelhastighed", r'w = 2 \cdot π \cdot f',
+        "Udregning af vinkelhastighed, når frekvens er kendt"),
+    Formula("Reaktans", r'X = \frac U I',
+        "Udregning af reaktans, når spænding og strøm er kendt"),
+    Formula("Impedans", r'Z = \frac U I',
+        "Udregning af impedans, når spænding og strøm er kendt"),
+    Formula("Faseforskydning", r'phi = \arctan(\frac X R)',
+        "Udregning af faseforskydning, når reaktans og modstand er kendt"),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -15,79 +41,19 @@ class Formler extends StatelessWidget {
         child: Center(
           child: Container(
             constraints: const BoxConstraints(maxWidth: 500),
-            child: GridView.count(
+            child: ListView.builder(
               scrollDirection: Axis.vertical,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
-              crossAxisCount: 2,
-              childAspectRatio: 10 / 8,
-              children: const [
-                FormelGridItem(
-                  title: "Spænding",
-                  equation: r'U = R \cdot I',
-                  description:
-                      "Udregning af spænding, når modstand og strøm er kendt",
-                ),
-                FormelGridItem(
-                  title: "Strøm",
-                  equation: r'I = \frac U R',
-                  description:
-                      "Udregning af strøm, når spænding og modstand er kendt",
-                ),
-                FormelGridItem(
-                  title: "Modstand",
-                  equation: r'R = \frac U I',
-                  description:
-                      "Udregning af modstand, når spænding og strøm er kendt",
-                ),
-                FormelGridItem(
-                  title: "Effekt",
-                  equation: r'P = U \cdot I',
-                  description:
-                      "Udregning af effekt, når spænding og strøm er kendt",
-                ),
-                FormelGridItem(
-                  title: "Kapacitans",
-                  equation: r'C = \frac Q U',
-                  description:
-                      "Udregning af kapacitans, når ladning og spænding er kendt",
-                ),
-                FormelGridItem(
-                  title: "Induktans",
-                  equation: r'L = \frac U I',
-                  description:
-                      "Udregning af induktans, når spænding og strøm er kendt",
-                ),
-                FormelGridItem(
-                  title: "Frekvens",
-                  equation: r'f = \frac 1 T',
-                  description: "Udregning af frekvens, når periodetid er kendt",
-                ),
-                FormelGridItem(
-                  title: "Vinkelhastighed",
-                  equation: r'w = 2 \cdot π \cdot f',
-                  description:
-                      "Udregning af vinkelhastighed, når frekvens er kendt",
-                ),
-                FormelGridItem(
-                  title: "Reaktans",
-                  equation: r'X = \frac U I',
-                  description:
-                      "Udregning af reaktans, når spænding og strøm er kendt",
-                ),
-                FormelGridItem(
-                  title: "Impedans",
-                  equation: r'Z = \frac U I',
-                  description:
-                      "Udregning af impedans, når spænding og strøm er kendt",
-                ),
-                FormelGridItem(
-                  title: "Faseforskydning",
-                  equation: r'phi = \arctan(\frac X R)',
-                  description:
-                      "Udregning af faseforskydning, når reaktans og modstand er kendt",
-                ),
-              ],
+              itemCount: FormList.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: FormelGridItem(
+                    title: FormList[index].title,
+                    equation: FormList[index].equation,
+                    description: FormList[index].description,
+                  ),
+                );
+              },
             ),
           ),
         ),
@@ -133,4 +99,13 @@ class FormelGridItem extends StatelessWidget {
       ),
     );
   }
+}
+
+// Class for a single item in the grid
+class Formula {
+  String title;
+  String equation;
+  String description;
+
+  Formula(this.title, this.equation, this.description);
 }

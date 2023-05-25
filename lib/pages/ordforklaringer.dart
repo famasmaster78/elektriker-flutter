@@ -41,11 +41,7 @@ class OrdForklaringer extends StatelessWidget {
         child: Center(
           child: Container(
             constraints: const BoxConstraints(maxWidth: 500),
-            child: GridView.count(
-              crossAxisCount: 2,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              childAspectRatio: 10 / 4,
+            child: ListView(
               children: [
                 const Card(
                   child: ListTile(
